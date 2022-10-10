@@ -61,3 +61,39 @@ int main()
     system("pause");
     return 0;
 }
+/*自己第二次做，更符合自己的思维
+int main()
+{
+    int n;
+    int arr[] = {1,2,3,4,5,6,7,8,9,10};
+    printf("请输入你想要查找的数:\n");
+    scanf("%d",&n);
+    int left = 0;
+    int szlong = sizeof(arr) / sizeof(arr[0]);
+    int right = szlong - 1;
+    int mid;
+    while(left <= right)
+    {
+        mid = (left + right) / 2;
+        if(n > arr[mid])
+        {
+            left = mid + 1;
+        }
+        if(n < arr[mid])
+        {
+            right = mid - 1;
+        }
+        if(n == arr[mid])
+        {
+            printf("找到了,下标为:%d\n",mid);
+            break;
+        }
+    }
+    if(left > right)
+    {
+        printf("该元素找不到");
+    }
+    system("pause");
+    return 0;
+}
+*/
