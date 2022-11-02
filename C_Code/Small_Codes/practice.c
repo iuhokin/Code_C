@@ -164,3 +164,330 @@
 //  return 0;
 // }
 
+//2022/10/31
+
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// int main()
+// {
+//  int arr1[] = { 1,2,5,6,3 };
+//  int sz1 = sizeof(arr1) / sizeof(arr1[0]);
+//  int ret = 1235;
+//  int n = ret;
+//  int sz2 = 0;
+//  while (n)
+//  {
+//   sz2++;
+//   n /= 10;
+//  }
+//  if (sz1 > sz2)
+//  {
+//   int i1 = sz1 - 1;
+//   int* p = (int*)malloc(sizeof(int) * (sz1 + 1));
+//   int j = 0;
+//   for (j = 0; j < sz1 + 1; j++)
+//   {
+//    p[j] = 0;
+//   }
+//   if (p == NULL)
+//   {
+//    perror(" ");
+//    return 0;
+//   }
+//   int m = 0;
+//   int i = 0;
+//   int a = sz1;
+//   while (a)
+//   {
+//    int num = arr1[i1] + (ret % 10) + m;
+//    if (num > 9)
+//    {
+//     num -= 10;
+//     p[i]=num;
+//     i++;
+//     m = 1;
+//     i1--;
+//     ret /= 10;
+
+//    }
+//    else
+//    {
+//     m = 0;
+//     p[i]=num;
+//     i++;
+//     i1--;
+//     ret /= 10;
+//    }
+//    a--;
+//   }
+//   if (p[i] != 0)
+//   {
+//    while (i>=0)
+//    {
+//     printf("%d", p[i]);
+//     i--;
+//    }
+//   }
+//   else
+//   {
+//    while (i-1>=0)
+//    {
+//     printf("%d", p[i-1]);
+//     i--;
+//    }
+//   }
+//   free(p);
+//   p = NULL;
+
+//  }
+//  else
+//  {
+//   int i2 = sz1 - 1;
+//   int* p = (int*)malloc(sizeof(int) * (sz2 + 1));
+//   int j = 0;
+//   for (j = 0; j < sz2+1; j++)
+//   {
+//    p[j] = 0;
+//   }
+//   if (p == NULL)
+//   {
+//    perror(" ");
+//    return 0;
+//   }
+//   int m = 0;
+//   int i = 0;
+//   int a = sz2;
+//   int num = 0;
+//   while (a)
+//   {
+//    if (i2 < 0)
+//     num = 0 + (ret % 10) + m;
+//    else
+//     num = arr1[i2] + (ret % 10) + m;
+//    if (num > 9)
+//    {
+//     num -= 10;
+//     p[i] = num;
+//     i++;
+//     m = 1;
+//     i2--;
+//     ret /= 10;
+
+//    }
+//    else
+//    {
+//     m = 0;
+//     p[i] = num;
+//     i++;
+//     i2--;
+//     ret /= 10;
+//    }
+//    a--;
+//   }
+//   if (p[i] != 0)
+//   {
+//    while (i >= 0)
+//    {
+//     printf("%d", p[i]);
+//     i--;
+//    }
+//   }
+//   else
+//   {
+//    while (i - 1 >= 0)
+//    {
+//     printf("%d", p[i - 1]);
+//     i--;
+//    }
+//   }
+//   free(p);
+//   p = NULL;
+//  }
+//  system("pause");
+//  return 0;
+// }
+
+
+
+// #include <stdio.h>
+// #include <stdlib.h>
+// int main()
+// {
+//  printf("%d", printf("%d", printf("%d", 43)));
+//  system("pause");
+//  return 0;
+// }
+
+//2022/11/01
+
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// int main()
+// {
+//     int a = 4;
+//     int b = 2;
+//     int c = 3;
+//     int d;
+//     d = (++a,b,c);
+//     printf("%d",d);
+//     printf("%d",a);
+//     system("pause");
+//     return 0;
+// }
+
+// 2022/11/02
+
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// int main()
+// {
+//     int num;
+//     int i;
+//     int count;
+//     printf("请输入一个整数:>");
+//     scanf("%d",&num);
+//     while(num)
+//     {
+//         if((num % 2)==1)
+//         {
+//             count++;
+//         }
+//         num /= 2;
+//     }
+//     printf("二进制中1的个数为:%d",count);
+//     system("pause");
+//     return 0;
+// }
+
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// int main()
+// {
+//     int num;
+//     int i;
+//     int count = 0;
+//     printf("请输入一个整数:>");
+//     scanf("%d",&num);
+//     for(i = 0;i < 32;i++)
+//     {
+//         if(1 == ((num >> i) & 1))
+//         {
+//             count++;
+//         }
+//     }
+//     printf("二进制中1的个数为:%d\n",count);
+//     system("pause");
+//     return 0;
+// }
+
+//method1
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// void swap(int n,int m)
+// {
+//     int temp;
+//     temp = n;
+//     n = m;
+//     m = temp;
+//     printf("%d %d",n,m);
+// }
+
+// int main()
+// {
+//     int n;
+//     int m;
+//     printf("请输入两个整数:>");
+//     scanf("%d%d",&n,&m);
+//     swap(n,m);
+//     system("pause");
+//     return 0;
+// }
+
+//method2
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// void swap(int n,int m)
+// {
+//     n = n + m;
+//     m = n - m;
+//     n = n - m;
+//     printf("%d %d",n,m);
+// }
+
+// int main()
+// {
+//     int n;
+//     int m;
+//     printf("请输入两个整数:>");
+//     scanf("%d%d",&n,&m);
+//     swap(n,m);
+//     system("pause");
+//     return 0;
+// }
+
+//method3
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// void swap(int n,int m)
+// {
+//     n = n ^ m;
+//     m = n ^ m;
+//     n = n ^ m;
+//     printf("%d %d",n,m);
+// }
+
+// int main()
+// {
+//     int n;
+//     int m;
+//     printf("请输入两个整数:>");
+//     scanf("%d%d",&n,&m);
+//     swap(n,m);
+//     system("pause");
+//     return 0;
+// }
+
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// int main()
+// {
+//     int a = 3;
+//     int b = 3;
+//     (a = 0) && (b = 5);
+//     printf("a = %d,b = %d\n",a,b); // 0,3
+    
+//     (a = 1) || (b = 5);
+//     printf("a = %d,b = %d\n",a,b); //1 3
+//     system("pause");
+//     return 0;
+// }
+
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// void print(int* p,int sz)
+// {
+//     int i;
+//     for(i = 0;i < sz;i++)
+//     {
+//         printf("%d ",*(p + i));
+//     }
+// }
+
+// int main()
+// {
+//     int arry[] = {1,2,3,4,5,6,7,8,9};
+//     int sz = sizeof(arry) / sizeof(arry[0]);
+//     print(arry,sz);
+//     system("pause");
+//     return 0;
+// }
+
