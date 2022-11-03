@@ -319,3 +319,232 @@
 //  return 0;
 // }
 
+//2022/11/01
+
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// int main()
+// {
+//     int a = 4;
+//     int b = 2;
+//     int c = 3;
+//     int d;
+//     d = (++a,b,c);
+//     printf("%d",d);
+//     printf("%d",a);
+//     system("pause");
+//     return 0;
+// }
+
+// 2022/11/02
+
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// int main()
+// {
+//     int num;
+//     int i;
+//     int count;
+//     printf("请输入一个整数:>");
+//     scanf("%d",&num);
+//     while(num)
+//     {
+//         if((num % 2)==1)
+//         {
+//             count++;
+//         }
+//         num /= 2;
+//     }
+//     printf("二进制中1的个数为:%d",count);
+//     system("pause");
+//     return 0;
+// }
+
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// int main()
+// {
+//     int num;
+//     int i;
+//     int count = 0;
+//     printf("请输入一个整数:>");
+//     scanf("%d",&num);
+//     for(i = 0;i < 32;i++)
+//     {
+//         if(1 == ((num >> i) & 1))
+//         {
+//             count++;
+//         }
+//     }
+//     printf("二进制中1的个数为:%d\n",count);
+//     system("pause");
+//     return 0;
+// }
+
+//method1
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// void swap(int n,int m)
+// {
+//     int temp;
+//     temp = n;
+//     n = m;
+//     m = temp;
+//     printf("%d %d",n,m);
+// }
+
+// int main()
+// {
+//     int n;
+//     int m;
+//     printf("请输入两个整数:>");
+//     scanf("%d%d",&n,&m);
+//     swap(n,m);
+//     system("pause");
+//     return 0;
+// }
+
+//method2
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// void swap(int n,int m)
+// {
+//     n = n + m;
+//     m = n - m;
+//     n = n - m;
+//     printf("%d %d",n,m);
+// }
+
+// int main()
+// {
+//     int n;
+//     int m;
+//     printf("请输入两个整数:>");
+//     scanf("%d%d",&n,&m);
+//     swap(n,m);
+//     system("pause");
+//     return 0;
+// }
+
+//method3
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// void swap(int n,int m)
+// {
+//     n = n ^ m;
+//     m = n ^ m;
+//     n = n ^ m;
+//     printf("%d %d",n,m);
+// }
+
+// int main()
+// {
+//     int n;
+//     int m;
+//     printf("请输入两个整数:>");
+//     scanf("%d%d",&n,&m);
+//     swap(n,m);
+//     system("pause");
+//     return 0;
+// }
+
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// int main()
+// {
+//     int a = 3;
+//     int b = 3;
+//     (a = 0) && (b = 5);
+//     printf("a = %d,b = %d\n",a,b); // 0,3
+    
+//     (a = 1) || (b = 5);
+//     printf("a = %d,b = %d\n",a,b); //1 3
+//     system("pause");
+//     return 0;
+// }
+
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// void print(int* p,int sz)
+// {
+//     int i;
+//     for(i = 0;i < sz;i++)
+//     {
+//         printf("%d ",*(p + i));
+//     }
+// }
+
+// int main()
+// {
+//     int arry[] = {1,2,3,4,5,6,7,8,9};
+//     int sz = sizeof(arry) / sizeof(arry[0]);
+//     print(arry,sz);
+//     system("pause");
+//     return 0;
+// }
+
+// 2022/11/03
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// void print(int num)
+// {
+//     if(num > 9)
+//     {
+//         print(num/10);
+//     }
+//     printf("%d ",num % 10);
+// }
+
+// int main()
+// {
+//     int num;
+//     printf("请输入一个整数:>");
+//     scanf("%d",&num);
+//     print(num);
+//     system("pause");
+//     return 0;
+// }
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct S
+{
+    int a;
+    char ch[20];
+    char* p;
+};
+
+struct P
+{
+    double a;
+    char str[20];
+    struct S p;
+};
+
+int main()
+{
+    char arry[] = "hello world";
+    struct S s = {1234,"hehe",arry};
+    struct P p = {3.14,"hehe world",{100,"haha world",arry+1}};
+    printf("%s\n",s.ch); // hehe
+    printf("%s\n",s.p); // hello world
+    printf("%s\n",p.p.p);//ello world
+    printf("%s\n",p.str);//hehe world
+    printf("%s\n",p.p.ch);//haha,world
+    system("pause");
+    return 0;
+} 
+
+
+
+
