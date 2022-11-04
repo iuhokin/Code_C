@@ -491,3 +491,94 @@
 //     return 0;
 // }
 
+// 2022/11/03
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// void print(int num)
+// {
+//     if(num > 9)
+//     {
+//         print(num/10);
+//     }
+//     printf("%d ",num % 10);
+// }
+
+// int main()
+// {
+//     int num;
+//     printf("请输入一个整数:>");
+//     scanf("%d",&num);
+//     print(num);
+//     system("pause");
+//     return 0;
+// }
+
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// struct S
+// {
+//     int a;
+//     char ch[20];
+//     char* p;
+// };
+
+// struct P
+// {
+//     double a;
+//     char str[20];
+//     struct S p;
+// };
+
+// int main()
+// {
+//     char arry[] = "hello world";
+//     struct S s = {1234,"hehe",arry};
+//     struct P p = {3.14,"hehe world",{100,"haha world",arry+1}};
+//     printf("%s\n",s.ch); // hehe
+//     printf("%s\n",s.p); // hello world
+//     printf("%s\n",p.p.p);//ello world
+//     printf("%s\n",p.str);//hehe world
+//     printf("%s\n",p.p.ch);//haha,world
+//     system("pause");
+//     return 0;
+// } 
+
+// 2022/11/04
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct Stu
+{
+    char name[20];
+    int age;
+    char address[20];
+}Stu;
+
+void print(Stu temp)
+{
+    printf("%s\n",temp.name);
+    printf("%s\n",temp.address);
+    printf("%d\n",temp.age);
+}
+
+void print2(Stu* temp)
+{
+    printf("%s\n",temp->name);
+    printf("%s\n",temp->address);
+    printf("%d\n",temp->age);
+}
+
+int main()
+{
+    Stu s = {"Mike",20,"GuangDong"};
+    print(s);
+    print2(&s);
+    system("pause");
+    return 0;
+}
+
+
+
+
