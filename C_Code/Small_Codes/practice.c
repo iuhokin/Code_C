@@ -546,35 +546,114 @@
 // } 
 
 // 2022/11/04
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// typedef struct Stu
+// {
+//     char name[20];
+//     int age;
+//     char address[20];
+// }Stu;
+
+// void print(Stu temp)
+// {
+//     printf("%s\n",temp.name);
+//     printf("%s\n",temp.address);
+//     printf("%d\n",temp.age);
+// }
+
+// void print2(Stu* temp)
+// {
+//     printf("%s\n",temp->name);
+//     printf("%s\n",temp->address);
+//     printf("%d\n",temp->age);
+// }
+
+// int main()
+// {
+//     Stu s = {"Mike",20,"GuangDong"};
+//     print(s);
+//     print2(&s);
+//     system("pause");
+//     return 0;
+// }
+
+//2022/11/05
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// int main()
+// {
+//     int i;
+//     for(i = 0;i < 100;i++)
+//     {
+//         printf("%d\n",i);
+//     }
+
+//     for(i = 0;i < 100;i++)
+//     {
+//         printf("%d\n",10-i);
+//     }
+//     system("pause");
+//     return 0;
+// }
+
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// int Add(int x,int y)
+// {
+//     return x + y;
+// }
+
+// int main()
+// {
+//     printf("hehe\n");
+//     int a = 10;
+//     int b = 20;
+//     int c = Add(a,b);
+//     printf("%d\n",c);
+//     system("pause");
+//     return 0;
+// }
+
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// int main()
+// {
+//     int arr[10] = {0};
+//     int i;
+//     for(i = 0;i < 10;i++)
+//     {
+//         printf("%d ",arr[i]);
+//     }
+//     system("pause");
+//     return 0;
+// }
+
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct Stu
-{
-    char name[20];
-    int age;
-    char address[20];
-}Stu;
-
-void print(Stu temp)
-{
-    printf("%s\n",temp.name);
-    printf("%s\n",temp.address);
-    printf("%d\n",temp.age);
-}
-
-void print2(Stu* temp)
-{
-    printf("%s\n",temp->name);
-    printf("%s\n",temp->address);
-    printf("%d\n",temp->age);
-}
-
 int main()
 {
-    Stu s = {"Mike",20,"GuangDong"};
-    print(s);
-    print2(&s);
+    int num;
+    int i;
+    int sum = 0;
+    printf("请输入一个整数:>");
+    scanf("%d",&num);
+    for(i = 1;i <= num;i++)
+    {
+        int j;
+        int ret = 1;
+        for(j = 1;j <= i;j++)
+        {
+            ret *= j;
+        }
+        sum += ret;
+    }
+    printf("%d\n",sum);
     system("pause");
     return 0;
 }
