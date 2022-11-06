@@ -633,30 +633,48 @@
 //     return 0;
 // }
 
-#include <stdio.h>
-#include <stdlib.h>
+// #include <stdio.h>
+// #include <stdlib.h>
 
-int main()
-{
-    int num;
-    int i;
-    int sum = 0;
-    printf("请输入一个整数:>");
-    scanf("%d",&num);
-    for(i = 1;i <= num;i++)
-    {
-        int j;
-        int ret = 1;
-        for(j = 1;j <= i;j++)
-        {
-            ret *= j;
-        }
-        sum += ret;
-    }
-    printf("%d\n",sum);
-    system("pause");
-    return 0;
-}
+// int main()
+// {
+//     int num;
+//     int i;
+//     int sum = 0;
+//     printf("请输入一个整数:>");
+//     scanf("%d",&num);
+//     for(i = 1;i <= num;i++)
+//     {
+//         int j;
+//         int ret = 1;
+//         for(j = 1;j <= i;j++)
+//         {
+//             ret *= j;
+//         }
+//         sum += ret;
+//     }
+//     printf("%d\n",sum);
+//     system("pause");
+//     return 0;
+// }
+
+// 2022/11/06
+
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+
+// int main()
+// {
+//     char arr1[] = "##########";
+//     char arr2[] = "bit";
+//     strcpy(arr1,arr2);
+//     printf("%s\n",arr1);
+//     system("pause");
+//     return 0;    
+// }
+
+
 
 
 
