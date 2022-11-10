@@ -108,6 +108,7 @@ char IsWin(char board[ROW][COL],int row,int col)
     int count;
     for(i = 0;i < row;i++)
     {
+        int count = 1;
         for(j = 0;j < col - 1;j++)
         {
             if(board[i][j] != board[i][j + 1])
@@ -116,7 +117,7 @@ char IsWin(char board[ROW][COL],int row,int col)
             }
             else
             {
-                count++;
+                count++; // 函数内去定义count = 1；防止count未定义
                 if(count == row)
                 {
                     if(board[i][j] != ' ')
@@ -129,6 +130,7 @@ char IsWin(char board[ROW][COL],int row,int col)
     // 竖
     for(i = 0;i < col;i++) // 列固定，行变化
     {
+        int count = 1;
         for(j = 0;j < row - 1;j++)
         {
             if(board[j][i] != board[j+1][i])
@@ -148,6 +150,7 @@ char IsWin(char board[ROW][COL],int row,int col)
     }
 
     // 正对角线
+    count = 1;
     for(i = 0;i < row - 1;i++)
     {
         if(board[i][i] != board[i+1][i+1])
@@ -166,7 +169,8 @@ char IsWin(char board[ROW][COL],int row,int col)
     }
 
     // 反对角线
-    for(i = row;i > 0;i--)
+    count = 1;
+    for(i = row - 1;i > 0;i--)
     {
         if(board[i][i] != board[i+1][i-1])
         {
@@ -175,8 +179,11 @@ char IsWin(char board[ROW][COL],int row,int col)
         else
         {
             count++;
-            if(board[i][i] != ' ')
-                return board[i][i];
+            if(count == row)
+            {
+                if(board[i][i] != ' ')
+                 return board[i][i];
+            }
         }
     }
 
