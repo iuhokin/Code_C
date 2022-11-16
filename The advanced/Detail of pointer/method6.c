@@ -24,6 +24,7 @@ void print2(int (*p)[5],int x,int y) // nb
         for(j = 0;j < y;j++)
         {
             printf("%d ",(*(p+i))[j]);
+            //printf("%d ",*(*(p+i)+j));
         }
         printf("\n");
     }
