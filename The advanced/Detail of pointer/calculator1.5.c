@@ -1,4 +1,4 @@
-// 妙
+// 最妙，比2更妙
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -39,37 +39,43 @@ void menu()
     printf("*******************\n");
 }
 
+void Calc(int (*pf)(int,int))
+{
+    int x;
+    int y;
+    printf("请输入两个操作数:>");
+    scanf("%d%d",&x,&y);
+    printf("%d\n",pf(x,y));
+}
+
 int main()
 {
     int input;
-    int x;
-    int y;
-    int (*pfArr[])(int,int) = {0,Add,Sub,Mul,Div};
     do
     {
         menu();
         printf("请选择:>");
         scanf("%d",&input);
-        int sz = sizeof(pfArr)/sizof(pfArr[0]);  
-        /*
-            for(i = 0;i < 5;i++)
-            {
-                printf("%p\n",pfArr[i]); 可以看出pfArr数组里面都是地址所以可以用sizeof求数量
-            }
-        */
-        if(input >= 1 && input < sz)
+        switch(input)
         {
-            printf("请输入两个操作数:>");
-            scanf("%d%d",&x,&y);
-            printf("%d\n",pfArr[input](x,y));
-        }
-        else if(input == 0)
-        {
-            printf("退出!\n");
-        }
-        else
-        {
-            printf("输入有误,请重新输入!\n");
+            case 1:
+                Calc(Add);
+                break;
+            case 2:
+                Calc(Sub);
+                break;
+            case 3:
+                Calc(Mul);
+                break;
+            case 4:
+                Calc(Div);
+                break;
+            case 0:
+                printf("退出!\n");
+                break;
+            default:
+                printf("输入有误,请重新输入!\n");
+                break;
         }
     }while(input);
     system("pause");
